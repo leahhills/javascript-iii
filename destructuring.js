@@ -29,7 +29,7 @@ var {firstName,lastName,title} =obj;
 
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
 }
-
+//return `Hello,`${title}${firstName}${}`` look up template literals
 
 
 
@@ -45,7 +45,7 @@ var {firstName,lastName,title} =obj;
   // CODE HERE
 function totalPopulation(personObj){
   var {utah,california,texas,arizona}=personObj;
-  return utah+california+texas+arizona;
+  return utah + california + texas + arizona;
 }
 
 // ========================
@@ -91,6 +91,19 @@ function largeNumbers ({first,second,third}){
 //Find the longest array and return that array.
 
   // CODE HERE
-function numberGroups({a,b,c}){
-  var (a,b,c);
-}
+  var obj1 = {
+    a: [1, 2, 3, 6, 9, 3],
+    b: [2, 3, 4, 5, 6],
+    c: [1, 5, 3, 4]
+  }
+
+  function numberGroups({a,b,c}){
+    //loop throught the array.
+    //find the largest array against the other ones.
+    //if it is the biggest one return that.
+   var biggestNumberAorB = a.length > b.length ? a:b;
+   console.log(biggetNumberAorB)
+   biggestNumberAorB.length > c.length? b:c;
+  }
+
+  numberGroups(obj1);

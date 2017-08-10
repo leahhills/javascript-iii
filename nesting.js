@@ -56,23 +56,28 @@ employeeUpdater("Theo");
 
 
 
-// // The array below represents IDs tied to reported workplace accidents. An employee accidentally entered in duplicates to array, making it look as though there are more accidents this year than there actually are.
-// // 1. Write a function called 'removeDuplicates' that will remove all duplicate entries in the workplaceAccidents array.
-// // 2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array. Loop over the array from front to back.
-// // 3. Return the updated array.
-//
-// var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
-//
-// // Code here
-//
-//
-// function removeDuplicates(){
-//   for(var i = 0; i < workplaceAccidents.length; i++){
-//     for(var j = 0; j< workplaceAccidents.length;j++){
-//
-//     }
-//   }
-// }
+// The array below represents IDs tied to reported workplace accidents. An employee accidentally entered in duplicates to array, making it look as though there are more accidents this year than there actually are.
+// 1. Write a function called 'removeDuplicates' that will remove all duplicate entries in the workplaceAccidents array.
+// 2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array. Loop over the array from front to back.
+// 3. Return the updated array.
+
+var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
+
+// Code here
+
+
+function removeDuplicates(arr){
+  for(var i = arr.length-1; i>=0; i--){
+    let num = arr[i];
+    for(var j =0;j< i-1;j++){
+      if(arr[j]===num){
+        arr.splice(i,1)
+      }
+    }
+  }
+  return arr;
+}
+removeDuplicates(workplaceAccidents);
 
 
 

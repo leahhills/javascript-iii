@@ -52,9 +52,13 @@ function totalPopulation(personObj){
 // ========================
 
 
+<<<<<<< HEAD
 // Write a function called ingrediants that will take in an object. This object will have 3 properties named carb, fat, and protein.
 //The property values will be strings. Use object destructuring to save the property values to new variables.
  // Push these new variables to an array and return the array.
+=======
+// Write a function called ingredients that will take in an object. This object will have 3 properties named carb, fat, and protein. The property values will be strings. Use object destructuring to save the property values to new variables. Push these new variables to an array and return the array. 
+>>>>>>> 50d49a81d12a5cad03a37212e52d03a4342a6380
 
   // CODE HERE
 function ingrediants(foodObj){

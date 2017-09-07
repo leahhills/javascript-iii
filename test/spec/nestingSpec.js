@@ -1,11 +1,11 @@
 describe('Update Employee Info', function() {
-    var returnedArr = employeeUpdater();
+    var returnedArr;
     it('Theo Trill object should be removed', function() { 
+        returnedArr = employeeUpdater();
         var flag = true;
         returnedArr.map(function(employee) {
             if (employee.firstName === 'Theo') flag = false;
         }) 
-      expect(employeeUpdater).toEqual(jasmine.any(Function))  
       expect(flag).toEqual(true);
     })
 
@@ -17,8 +17,15 @@ describe('Update Employee Info', function() {
   })
 
   describe('Workplace accidents', function() {
+      it('removeDuplicates function should exist', function() {
+          expect(removeDuplicates).toEqual(jasmine.any(Function));
+      })
+      it('removeDuplicates should return the array of employees', function() {
+          returnedArr = removeDuplicates([12, 56, 44, 3, 29, 56, 56, 3, 7, 12])
+          expect(returnedArr).toEqual(jasmine.any(Array));
+      })
       it ('Should remove all duplicate entries', function() {
-          var returnedArr = removeDuplicates().sort(function(a,b) {
+          var returnedArr = removeDuplicates([12, 56, 44, 3, 29, 56, 56, 3, 7, 12]).sort(function(a,b) {
               return a - b;
           });
           expect(returnedArr).toEqual(jasmine.any(Array));
@@ -36,4 +43,44 @@ describe('Update Employee Info', function() {
     it('grumpyActivity value should be \'eat food\'', function() {
         expect(grumpyActivity).toEqual('eat food')
       })
+    it('fluffy2ndFriend should be "Lazy Bones"', function() {
+        expect(fluffy2ndFriend).toEqual('Lazy Bones');
+    })
+  })
+
+  describe('Driving record', function() {
+      it('recordCleaner should exist', function() {
+          expect(recordCleaner).toEqual(jasmine.any(Function));
+      })
+      it('No longer at fault for accidents', function() {
+          recordCleaner();
+          console.log(myCar)
+          var flag = true;
+          myCar.accidents.map(function(accident) {
+              if (accident.atFaultForAccident) {
+                  flag = false;
+              }
+          })
+            expect(flag).toEqual(true);
+      })  
+  })
+
+  describe('Looper', function() {
+      it('looper should exist', function() {
+          expect(looper).toEqual(jasmine.any(Function));
+      })
+      it('Array should be filled with "odd" and "even" instead of numbers', function() {
+          var answer = [ [ 'odd', 'even', 'odd', 'even' ], [ 'odd', 'even' ],[ 'odd', 'even', 'odd', 'even', 'odd' ] ]
+        var userAnswer = looper();
+        var flag = true;
+        for (var i = 0; i < answer.length; i++) {
+            for(var j = 0; j < answer[i].length; j++) {
+                if (answer[i][j] !== userAnswer[i][j]) {
+                    flag = false;
+                }
+            }
+        }
+        expect(flag).toEqual(true);
+        })
+
   })

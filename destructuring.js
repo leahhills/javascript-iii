@@ -22,6 +22,7 @@ var {color,make,model,year}=carDetails;
 //Return the concatenated string.
 
 function greeting( obj ) {
+  
   // CODE HERE
 var {firstName,lastName,title} =obj;
 

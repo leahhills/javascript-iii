@@ -21,7 +21,7 @@ Each employee can:
 
 call your class Employee and receive all the data in the constructor in the order listed
 */
-class Employee {
+class Employee  {
     constructor(firstName,lastName,email,age){
         this.first_name = firstName;
         this.last_name = lastName;

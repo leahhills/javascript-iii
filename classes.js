@@ -3,7 +3,7 @@
 
 /*
 Classes are a tool for building similar objects over and over again.
-They are a construct that helps your organize your code.
+They are a construct that helps you organize your code.
 
 Let's work with some employees at a company.
 You work for Widget Co.  They have hundreds of employees.
@@ -21,7 +21,18 @@ Each employee can:
 
 call your class Employee and receive all the data in the constructor in the order listed
 */
-
+class Employee {
+    constructor(firstName,lastName,email,age){
+        this.first_name = firstName;
+        this.last_name = lastName;
+        this.email = email;
+        this.age = age;
+        this.makeWidget=function (){
+           return firstName + " "+ lastName +' Widget'
+        }
+    }
+}
+var e = new Employee();
 
 
 /*
@@ -40,7 +51,24 @@ They can (methods) :
 call your class Manager
 
 */
-
+class Manager {
+    constructor(firstName,lastName,email,age){
+        this.first_name = firstName;
+        this.last_name = lastName;
+        this.email = email;
+        this.age = age;
+        // this.makeWidget = function (){
+        //    return firstName + " "+ lastName +' Widget';
+        this.reports = [];
+    }
+    hire(employee){
+        this.reports.push(employee);
+    }
+    fire(index){
+        this.reports.splice(index,1);
+    }
+}
+var m = new Manager();
 
 
 
